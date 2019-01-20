@@ -92,6 +92,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="fromCurrency" destination="BjL-8W-vOr" id="kfX-BR-xel"/>
+                        <outlet property="toCurrency" destination="S5M-EW-4bJ" id="q4o-6Y-K6D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
