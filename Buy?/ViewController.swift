@@ -42,7 +42,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         RegionPicker.delegate = self
         RegionPicker.dataSource = self
 
-        exchangeButton.setTitle("ExChange To", for: .normal)
+        exchangeButton.setTitle("ExChange", for: .normal)
 
     }
 
