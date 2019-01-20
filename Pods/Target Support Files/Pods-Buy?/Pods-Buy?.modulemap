@@ -1,0 +1,6 @@
+framework module Pods_Buy_ {
+  umbrella header "Pods-Buy?-umbrella.h"
+
+  export *
+  module * { export * }
+}
