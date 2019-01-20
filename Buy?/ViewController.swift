@@ -14,8 +14,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     let regionArray = ["纽约", "洛杉矶", "旧金山", "达拉斯", "芝加哥", "休斯敦", "西雅图", "迈阿密", "波士顿"]
     
-    @IBOutlet weak var exchangeButton: UIButton!
     
+    @IBOutlet weak var exchangeButton: UIButton!
     @IBOutlet weak var RegionPicker: UIPickerView!
     @IBOutlet weak var USDTextField: UITextField!
     @IBOutlet weak var CNYLabel: UILabel!
@@ -42,7 +42,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 
     @IBAction func ExchangePressed(_ sender: UIButton) {
-        print ("Pressed")
+        print ("Pressed exchange")
+        
     }
     
 }
