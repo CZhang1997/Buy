@@ -18,11 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_1871" translatesAutoresizingMaskIntoConstraints="NO" id="trg-Kw-ZNx" userLabel="background">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="trg-Kw-ZNx" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IV1-B4-0JD">
                                 <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="trg-Kw-ZNx" id="XAk-L0-rAH"/>
+                                    <outlet property="delegate" destination="trg-Kw-ZNx" id="Hmz-uH-NLb"/>
+                                </connections>
                             </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Cz-22-td4" userLabel="button view">
                                 <rect key="frame" x="0.0" y="142" width="375" height="160"/>
@@ -93,8 +97,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="fromCurrency" destination="BjL-8W-vOr" id="kfX-BR-xel"/>
-                        <outlet property="toCurrency" destination="S5M-EW-4bJ" id="q4o-6Y-K6D"/>
+
+                        <outlet property="CNYLabel" destination="S5M-EW-4bJ" id="AcF-Vd-nIc"/>
+                        <outlet property="RegionPicker" destination="IV1-B4-0JD" id="jgg-Zb-kGg"/>
+                        <outlet property="USDTextField" destination="BjL-8W-vOr" id="byk-jo-0AW"/>
+
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -103,6 +110,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="IMG_1871" width="281" height="609"/>
+        <image name="Background" width="281" height="609"/>
     </resources>
 </document>
