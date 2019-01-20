@@ -38,7 +38,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         // Do any additional setup after loading the view, typically from a nib.
         RegionPicker.delegate = self
         RegionPicker.dataSource = self
-        exchangeButton.setTitle("ExChange", for: .normal)
+        exchangeButton.setTitle("ExChange To", for: .normal)
     }
 
     @IBAction func ExchangePressed(_ sender: UIButton) {
