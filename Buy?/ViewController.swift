@@ -24,7 +24,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var input : Double?
     
     
+
+
     @IBOutlet weak var exchangeButton: UIButton!
+    
     @IBOutlet weak var RegionPicker: UIPickerView!
     @IBOutlet weak var USDTextField: UITextField!
     @IBOutlet weak var CNYLabel: UILabel!
@@ -48,6 +51,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         RegionPicker.delegate = self
         RegionPicker.dataSource = self
         exchangeButton.setTitle("ExChange", for: .normal)
+
     }
 
     @IBAction func ExchangePressed(_ sender: UIButton) {

@@ -99,7 +99,7 @@
                         <outlet property="CNYLabel" destination="S5M-EW-4bJ" id="AcF-Vd-nIc"/>
                         <outlet property="RegionPicker" destination="IV1-B4-0JD" id="jgg-Zb-kGg"/>
                         <outlet property="USDTextField" destination="BjL-8W-vOr" id="byk-jo-0AW"/>
-                        <outlet property="exchangeButton" destination="6iM-8f-V5Q" id="fJ8-mx-Y2U"/>
+                        <outlet property="exchangeButton" destination="6iM-8f-V5Q" id="1Ko-uV-6ag"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
