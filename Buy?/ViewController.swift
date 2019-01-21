@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
 
 class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+
 
     let stateArray = ["AZ-亚利桑那州", "CA-加利福尼亚州", "CO-科罗拉多州", "FL-佛罗里达州", "GA-乔治亚州", "HI-夏威夷州", "IL-伊利诺伊州", "MD-马里兰州", "MA-马萨诸塞州", "MI-密歇根州", "NV-内华达州", "NY-纽约州", "OR-俄勒冈州", "TX-德克萨斯州", "WA-华盛顿州"]
     let cityArray = ["纽约", "洛杉矶", "旧金山", "达拉斯", "芝加哥", "休斯敦", "西雅图", "迈阿密", "波士顿"]
@@ -27,11 +31,24 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     let OR = ["波特兰"]
     let TX = ["休斯敦", "达拉斯", "奥斯汀", "圣安东尼奥"]
     let WA = ["西雅图"]
+
+
+
+    let regionArray = ["纽约", "洛杉矶", "旧金山", "达拉斯", "芝加哥", "休斯敦", "西雅图", "迈阿密", "波士顿"]
+    let currencyCode = ["CNY","other"]
+    let url = "http://apilayer.net/api/live"
+    let accessCode = ""
+    
+    var currencyJSON : JSON?
+    var input : Double?
+
     
     var currentTextField = UITextField()
     var pickerView = UIPickerView()
     var i : Int = 0     // State Counter.
     var chooseCity : String = ""
+    
+    @IBOutlet weak var exchangeButton: UIButton!
     
     @IBOutlet weak var USDTextField: UITextField!
     @IBOutlet weak var CNYLabel: UILabel!
@@ -88,18 +105,29 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         }
     }
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        exchangeButton.setTitle("ExChange", for: .normal)
     }
 
     @IBAction func ExchangePressed(_ sender: UIButton) {
-        print ("Pressed")
+        print ("Pressed exchange")
+        if let usd = Double(USDTextField.text!) {
+            input = usd
+            print ("double")
+            getCurrencyData()
+        }
+        else
+        {
+            CNYLabel.text = "enter number only"
+        }
+        
     }
     
-    
-    
-    
+
     
     func identifyState(stateCounter : Int) -> [String] {
         switch stateCounter {
@@ -120,7 +148,34 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
             case 14: return WA
             default: return AZ
         }
+
+    func calculate()
+    {
+        if let USDCNY = currencyJSON!["quotes"]["USDCNY"].double {
+            let change = input! * USDCNY
+            CNYLabel.text = "\(change)"
+            
+        }
+    }
+    
+    func getCurrencyData()
+    {
         
+        let params: [String:String] = ["access_key": accessCode, "format" : "1"]
+        
+        Alamofire.request(url, method: .get, parameters: params).responseJSON { respond in
+            if respond.result.isSuccess {
+                //print (respond)
+                self.currencyJSON = JSON(respond.result.value!)
+                self.calculate()
+            }
+            else{
+                print ("connection issue")
+                print (respond)
+            }
+            
+        }
+
     }
     
     
