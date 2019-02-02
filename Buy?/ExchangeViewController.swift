@@ -130,8 +130,8 @@ class ExchangeViewController: UITableViewController, UITextFieldDelegate, Select
         {
             currencyExchange[currentTag] = value
             input = value
-            calculate()
-            //getCurrencyData()
+            //culate()cal
+            getCurrencyData()
         }
         else
         {
