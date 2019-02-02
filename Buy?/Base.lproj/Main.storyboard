@@ -217,7 +217,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IOT-Sp-8b9">
                             <connections>
                                 <action selector="addCurrency:" destination="e62-U8-Z0F" id="7D6-Bh-HLW"/>
-                                <segue destination="Y3i-ST-3ha" kind="show" id="N15-Q8-vCA"/>
+                                <segue destination="Y3i-ST-3ha" kind="show" identifier="selectCurrencySegue" id="N15-Q8-vCA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -230,29 +230,46 @@
             </objects>
             <point key="canvasLocation" x="-662" y="55"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="8Op-43-dvT">
             <objects>
-                <viewController id="Y3i-ST-3ha" sceneMemberID="viewController">
+                <viewController id="Y3i-ST-3ha" customClass="SearchViewController" customModule="Buy_" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nQ0-16-DQe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请选择货币种类" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pod-vL-9cE">
-                                <rect key="frame" x="20" y="127" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fd7-cK-v5V">
+                                <rect key="frame" x="28" y="298" width="281" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="JP4-1g-Ra4"/>
+                                    <constraint firstAttribute="height" constant="216" id="QZU-NR-vzd"/>
+                                </constraints>
+                            </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请选择货币种类" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pod-vL-9cE">
+                                <rect key="frame" x="0.0" y="130" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Pod-vL-9cE" firstAttribute="leading" secondItem="P5H-ou-IqR" secondAttribute="leading" id="DVR-K7-fhp"/>
+                            <constraint firstItem="P5H-ou-IqR" firstAttribute="trailing" secondItem="Pod-vL-9cE" secondAttribute="trailing" constant="1" id="Sl5-vt-Hfh"/>
+                            <constraint firstItem="Fd7-cK-v5V" firstAttribute="top" secondItem="Pod-vL-9cE" secondAttribute="bottom" constant="138" id="Zc9-99-Xz2"/>
+                            <constraint firstItem="Fd7-cK-v5V" firstAttribute="centerX" secondItem="nQ0-16-DQe" secondAttribute="centerX" id="k9H-j1-NSz"/>
+                            <constraint firstItem="Fd7-cK-v5V" firstAttribute="centerY" secondItem="nQ0-16-DQe" secondAttribute="centerY" id="kGb-Ii-Cdm"/>
+                            <constraint firstItem="Pod-vL-9cE" firstAttribute="top" secondItem="P5H-ou-IqR" secondAttribute="top" constant="42" id="pQk-pP-7KC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="P5H-ou-IqR"/>
                     </view>
+                    <connections>
+                        <outlet property="CurrencyPicker" destination="Fd7-cK-v5V" id="EuG-Hb-Dkp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQj-g8-bc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11.594202898550726" y="52.989130434782609"/>
+            <point key="canvasLocation" x="326" y="74"/>
         </scene>
     </scenes>
     <resources>

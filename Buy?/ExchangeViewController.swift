@@ -11,7 +11,9 @@ import Alamofire
 import SwiftyJSON
 import SVProgressHUD
 
-class ExchangeViewController: UITableViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+
+class ExchangeViewController: UITableViewController, UITextFieldDelegate, SelectCurrencyDelegate {
+    
     
     @IBOutlet var currencyTableView: UITableView!
     
@@ -22,28 +24,28 @@ class ExchangeViewController: UITableViewController, UITextFieldDelegate, UIPick
     let accessCode = "85b4af3cd505c58eecc26d3a083a4f70"
     
     
-    var pickerView = UIPickerView()
+    var pickerView = [UIPickerView]()
+    var cons = [NSLayoutConstraint]()
     var input: Double = 0
     var currentTag = 0
     var text : UITextField?
     var CurrencyUsed = [1,0,2]
     var currencyExchange:[Double] = [0,0,0]
     var index = [IndexPath]()
+    var rowSelect = -1
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         getCurrencyData()
         
-        self.pickerView.delegate = self
-        self.pickerView.dataSource = self
-        pickerView.isHidden = true
-        self.view.addSubview(pickerView)
+      
         
 //          let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
 //         currencyTableView.addGestureRecognizer(tapGesture)
 //
-        
+//        
         currencyTableView.register(UINib(nibName: "CurrencyCell", bundle: nil), forCellReuseIdentifier: "currencyCell")
         currencyTableView.separatorStyle = .none
     }
@@ -51,16 +53,28 @@ class ExchangeViewController: UITableViewController, UITextFieldDelegate, UIPick
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+       // print("numberOfRowsInSection")
         return CurrencyUsed.count
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+       // pickerView[indexPath.row].addConstraints(cons)
+//        NSLayoutConstraint.activate(pickerView[indexPath.row].constraints)
+//
+//        pickerView[indexPath.row].isHidden = false
+//        tableView.reloadData()
+        rowSelect = indexPath.row
+       
+        performSegue(withIdentifier: "selectCurrencySegue", sender: nil)
         text?.endEditing(true)
         tableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "currencyCell", for: indexPath) as! CurrencyCell
+        
         
         cell.CurrencyCode.text = currency.currencyArray[CurrencyUsed[indexPath.row]]
         cell.CurrencyName.text = currency.currencyName [CurrencyUsed[indexPath.row]]
@@ -69,17 +83,26 @@ class ExchangeViewController: UITableViewController, UITextFieldDelegate, UIPick
         cell.CurrencyValue.keyboardType = .decimalPad
         cell.CurrencyValue.addTarget(self, action: #selector(textFieldDidChange(_ :)), for: .editingChanged)
         
-        pickerView.tag = indexPath.row
-        cell.addSubview(pickerView)
+//        cell.CurrencyPickerView.tag = indexPath.row
+//        cell.CurrencyPickerView.delegate = self
+//        cell.CurrencyPickerView.selectRow(CurrencyUsed[indexPath.row], inComponent: 0, animated: true)
+//        cell.CurrencyPickerView.isHidden = false
+//        pickerView.append(cell.CurrencyPickerView)
         
-        pickerView.isHidden = false
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(currencyCodeTapped))
-        cell.CurrencyCode.addGestureRecognizer(tapGesture)
+//        cons  = cell.CurrencyPickerView.constraints
+//        NSLayoutConstraint.deactivate(cell.CurrencyPickerView.constraints)
+//
+        
+//        cell.CurrencyPickerView.isHidden = true
+
+        
+       //pickerView.isHidden = false
+        
         //  print("Tag beg: \(cell.CurrencyValue.tag)")
         cell.CurrencyValue.delegate = self
         
-        index.append(indexPath)
-      //  print ("append \(index.count)")
+        //index.append(indexPath)
+    //    print ("append \(index.count)")
         return cell
     }
     
@@ -90,8 +113,8 @@ class ExchangeViewController: UITableViewController, UITextFieldDelegate, UIPick
     
     func configureTableView()
     {
-        currencyTableView.rowHeight = 500//UITableView.automaticDimension
-       // currencyTableView.estimatedRowHeight = 120
+        currencyTableView.rowHeight = UITableView.automaticDimension
+        currencyTableView.estimatedRowHeight = 120
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
@@ -112,7 +135,8 @@ class ExchangeViewController: UITableViewController, UITextFieldDelegate, UIPick
         }
         else
         {
-            
+            input = 0
+            calculate()
             textField.placeholder = "Enter number only"
         }
     }
@@ -130,14 +154,16 @@ class ExchangeViewController: UITableViewController, UITextFieldDelegate, UIPick
     
     func calculate() // -> Double //from:String, to:String)
     {
-        for x in 0 ... CurrencyUsed.count-1
+    //    print("CurrencyUsed.count is \(CurrencyUsed.count)")
+        index = tableView.indexPathsForVisibleRows!
+        while index.count < CurrencyUsed.count
         {
-//            if text?.text == ""
-//            {
-//                if let cell = currencyTableView.cellForRow(at: index[x]) as? CurrencyCell {
-//                    cell.CurrencyValue.text = "\(currencyExchange[x])"
-//                }
-//            }
+            let newPath = IndexPath(row: index[index.count-1].row + 1, section: index[index.count-1].section)
+            index.append(newPath)
+          //  print ("index count = \(index.count)")
+        }
+        for x in 0 ... index.count-1
+        {
             if x != currentTag
             {
                 if let fromCurrency = currencyJSON!["quotes"]["USD\(currency.currencyArray[CurrencyUsed[currentTag]])"].double
@@ -151,18 +177,15 @@ class ExchangeViewController: UITableViewController, UITextFieldDelegate, UIPick
                     {
                         currencyExchange[x] = input * exchange
                     }
-                    
+//                    print("CurrencyUsed at is \(x) and \(currencyExchange[x])")
                     if let cell = currencyTableView.cellForRow(at: index[x]) as? CurrencyCell {
                         cell.CurrencyValue.text = "\(currencyExchange[x])"
+                        
                     }
-                    //  print("from \(currency.currencyArray[CurrencyUsed[currentTag]]): \(fromCurrency)\nto \(currency.currencyArray[CurrencyUsed[x]]): \(toCurrency) \nloop \(x):\(currencyExchange[x])")
                 }
             }
-            
-            
         }
        
-        //self.tableView.reloadData()
         //SVProgressHUD.dismiss()
     }
     
@@ -176,14 +199,10 @@ class ExchangeViewController: UITableViewController, UITextFieldDelegate, UIPick
             if respond.result.isSuccess {
                 //print (respond)
                 self.currencyJSON = JSON(respond.result.value!)
-                //self.defaults.set(self.currencyJSON, forKey: "currencyJSON")
-                //print ("calculating")
-                //print (respond)
                 self.calculate()//from: "CNY",to: "JPY")
             }
             else{
                 print ("connection issue")
-                // print (respond)
                 // self.calculate(from1, to1)
             }
         }
@@ -195,25 +214,82 @@ class ExchangeViewController: UITableViewController, UITextFieldDelegate, UIPick
         text?.endEditing(true)
     }
     
-    @objc func currencyCodeTapped()
-    {
-        print ("currency tap")
-    }
+   
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return currency.currencyName.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return currency.currencyName[row]
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func userSelectCurrency(index: Int) {
+        if let fromCurrency = currencyJSON!["quotes"]["USD\(currency.currencyArray[CurrencyUsed[rowSelect]])"].double
+        {
+            let toCurrency = currencyJSON!["quotes"]["USD\(currency.currencyArray[index])"].double
+            let exchange = toCurrency! / fromCurrency
             
+            let prevValue = currencyExchange[rowSelect]
+            currencyExchange[rowSelect] = Double(round(prevValue * exchange * 100.0)/100.0)
+            if currencyExchange[rowSelect] < 1
+            {
+                currencyExchange[rowSelect] = prevValue * exchange
+            }
+            CurrencyUsed[rowSelect] = index
+            if let cell = currencyTableView.cellForRow(at: self.index[rowSelect]) as? CurrencyCell {
+                cell.CurrencyValue.text = "\(currencyExchange[rowSelect])"
+                cell.CurrencyName.text = "\(currency.currencyName[index])"
+                cell.CurrencyCode.text = "\(currency.currencyArray[index])"
+            }
+        }
+        rowSelect = -1
+        
     }
-    
-    
+    func userAddACurrency(currencyIndex: Int) {
+        let newPath = IndexPath(row: index[index.count-1].row + 1, section: index[index.count-1].section)
+        index.append(newPath)
+        print ("index count = \(index.count)")
+        CurrencyUsed.append(currencyIndex)
+        currencyExchange.append(0.00)
+       tableView.reloadData()
+        
+        for x in 1 ... index.count-1
+        {
+            currentTag = 0
+            input = currencyExchange[0]
+                if let fromCurrency = currencyJSON!["quotes"]["USD\(currency.currencyArray[CurrencyUsed[currentTag]])"].double
+                {
+                    let toCurrency = currencyJSON!["quotes"]["USD\(currency.currencyArray[CurrencyUsed[x]])"].double
+                    let exchange = toCurrency! / fromCurrency
+                    // input = 1
+                    
+                    currencyExchange[x] = Double(round(input * exchange * 100.0)/100.0)
+                    if currencyExchange[x] == 0
+                    {
+                        currencyExchange[x] = input * exchange
+                    }
+                   
+                    if let cell = currencyTableView.cellForRow(at: index[x]) as? CurrencyCell {
+                        cell.CurrencyValue.text = "\(currencyExchange[x])"
+                        
+                    }
+                }
+            
+        }
+        
+        tableView.reloadData()
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "selectCurrencySegue"{
+            let destinationVC = segue.destination as! SearchViewController
+                destinationVC.delegate = self
+              //  print ("\n\nprepare\n\n")
+                if rowSelect >= 0
+               {
+                
+                 destinationVC.index = CurrencyUsed[rowSelect]
+                }
+                else
+                {
+                    destinationVC.index = -1
+            }
+        }
+    }
+
     /*
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
