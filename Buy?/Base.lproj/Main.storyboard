@@ -188,11 +188,11 @@
             </objects>
             <point key="canvasLocation" x="-868" y="-665.21739130434787"/>
         </scene>
-        <!--Item-->
+        <!--全球汇算-->
         <scene sceneID="rlc-qZ-vK1">
             <objects>
                 <navigationController id="LSV-h6-X5e" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="LoE-Yy-UpT"/>
+                    <tabBarItem key="tabBarItem" title="全球汇算" id="LoE-Yy-UpT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bXr-bN-mI6">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
