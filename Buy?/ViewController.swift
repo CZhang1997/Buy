@@ -40,9 +40,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     /***************************************************************/
     @IBOutlet weak var realTimeCurrencySwitch: UISwitch!
     @IBOutlet weak var USDTextField: UITextField!
+    {
+        didSet {
+            USDTextField.addDoneCancelToolbar()
+        }
+    }
     @IBOutlet weak var CNYLabel: UILabel!
-    @IBOutlet weak var stateTextField: UITextField!
-    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var stateTextField: UITextField! {
+        didSet {
+            stateTextField.addDoneCancelToolbar()
+        }
+    }
+    @IBOutlet weak var cityTextField: UITextField! {
+        didSet{
+            cityTextField.addDoneCancelToolbar()
+        }
+    }
     @IBOutlet weak var cityLabel: UILabel!
     
     
