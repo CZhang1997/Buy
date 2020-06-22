@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		6029ADA421F5741700A6E5AF /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6029ADA321F5741700A6E5AF /* City.swift */; };
+		605C44AC22236568004B0728 /* Monaco.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 605C44AB22236568004B0728 /* Monaco.ttf */; };
+		60867BC12225F82C0053C5B5 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60867BC02225F82C0053C5B5 /* TestViewController.swift */; };
+		60867BC32225F86A0053C5B5 /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60867BC22225F86A0053C5B5 /* TestCollectionViewCell.swift */; };
+		60867BC622260C6A0053C5B5 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60867BC522260C6A0053C5B5 /* HomePageViewController.swift */; };
+		60867BC822260CD80053C5B5 /* LargeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60867BC722260CD80053C5B5 /* LargeCollectionViewCell.swift */; };
 		60E2547721F68FBE00AD75D2 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2547621F68FBE00AD75D2 /* Currency.swift */; };
 		87B9BAA7987342951E4E0CCC /* Pods_Buy_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24455AA38805FBB099929DCF /* Pods_Buy_.framework */; };
 		B92E5EEB21F410FE00C40DB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E5EEA21F410FE00C40DB7 /* AppDelegate.swift */; };
@@ -18,12 +23,20 @@
 		B95DB5B221FE5B78001B2B83 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95DB5B121FE5B78001B2B83 /* SearchViewController.swift */; };
 		B98CA4B621F7F9760083004E /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98CA4B421F7F9760083004E /* CurrencyCell.swift */; };
 		B98CA4B721F7F9760083004E /* CurrencyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B98CA4B521F7F9760083004E /* CurrencyCell.xib */; };
-		B98CA4BA21F7FBAA0083004E /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98CA4B921F7FBAA0083004E /* ExchangeViewController.swift */; };
+		B9B1B7C722400C4700A28462 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B1B7C622400C4700A28462 /* TipsViewController.swift */; };
+		B9BCC0372241690F00986949 /* ExchangeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BCC0362241690F00986949 /* ExchangeTableViewController.swift */; };
+		B9BCC0392242C49600986949 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BCC0382242C49600986949 /* MainTabBarController.swift */; };
+		B9C903652222270E001D45C2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C903642222270E001D45C2 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		24455AA38805FBB099929DCF /* Pods_Buy_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Buy_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6029ADA321F5741700A6E5AF /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		605C44AB22236568004B0728 /* Monaco.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Monaco.ttf; path = ../Monaco.ttf; sourceTree = "<group>"; };
+		60867BC02225F82C0053C5B5 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		60867BC22225F86A0053C5B5 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
+		60867BC522260C6A0053C5B5 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		60867BC722260CD80053C5B5 /* LargeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCollectionViewCell.swift; sourceTree = "<group>"; };
 		60E2547621F68FBE00AD75D2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		AEC3195C83C50DA1F20BE813 /* Pods-Buy?.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buy?.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Buy?/Pods-Buy?.debug.xcconfig"; sourceTree = "<group>"; };
 		B92E5EE721F410FE00C40DB7 /* Buy?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Buy?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,9 +47,14 @@
 		B92E5EF421F4110000C40DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B92E5EF621F4110000C40DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B95DB5B121FE5B78001B2B83 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B9635D2F2240A4A4002DA162 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		B9635D302240A4A4002DA162 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		B98CA4B421F7F9760083004E /* CurrencyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
 		B98CA4B521F7F9760083004E /* CurrencyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyCell.xib; sourceTree = "<group>"; };
-		B98CA4B921F7FBAA0083004E /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
+		B9B1B7C622400C4700A28462 /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
+		B9BCC0362241690F00986949 /* ExchangeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeTableViewController.swift; sourceTree = "<group>"; };
+		B9BCC0382242C49600986949 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		B9C903642222270E001D45C2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		D8D192D3DC1824AA6F00280D /* Pods-Buy?.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buy?.release.xcconfig"; path = "Pods/Target Support Files/Pods-Buy?/Pods-Buy?.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +77,65 @@
 				D8D192D3DC1824AA6F00280D /* Pods-Buy?.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		605C44AE222365A0004B0728 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				605C44AB22236568004B0728 /* Monaco.ttf */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
+		60867BB92225EFAE0053C5B5 /* CurrencyExchange */ = {
+			isa = PBXGroup;
+			children = (
+				B95DB5B121FE5B78001B2B83 /* SearchViewController.swift */,
+				B9BCC0362241690F00986949 /* ExchangeTableViewController.swift */,
+			);
+			path = CurrencyExchange;
+			sourceTree = "<group>";
+		};
+		60867BBA2225F01D0053C5B5 /* SaleTax */ = {
+			isa = PBXGroup;
+			children = (
+				B92E5EEC21F410FE00C40DB7 /* ViewController.swift */,
+			);
+			path = SaleTax;
+			sourceTree = "<group>";
+		};
+		60867BBC2225F0500053C5B5 /* Tip */ = {
+			isa = PBXGroup;
+			children = (
+				B9B1B7C622400C4700A28462 /* TipsViewController.swift */,
+			);
+			path = Tip;
+			sourceTree = "<group>";
+		};
+		60867BBD2225F0650053C5B5 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				B9C903642222270E001D45C2 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		60867BBF2225F80E0053C5B5 /* TestCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				60867BC02225F82C0053C5B5 /* TestViewController.swift */,
+				60867BC22225F86A0053C5B5 /* TestCollectionViewCell.swift */,
+			);
+			path = TestCollectionView;
+			sourceTree = "<group>";
+		};
+		60867BC422260B820053C5B5 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				60867BC522260C6A0053C5B5 /* HomePageViewController.swift */,
+				60867BC722260CD80053C5B5 /* LargeCollectionViewCell.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		965B236C3FC55C1D95DE8AA9 /* Frameworks */ = {
@@ -90,17 +167,14 @@
 		B92E5EE921F410FE00C40DB7 /* Buy? */ = {
 			isa = PBXGroup;
 			children = (
+				605C44AE222365A0004B0728 /* Font */,
+				B9C9035F22222448001D45C2 /* ViewController */,
 				B92E5EEA21F410FE00C40DB7 /* AppDelegate.swift */,
-				B92E5EEC21F410FE00C40DB7 /* ViewController.swift */,
 				B92E5EEE21F410FE00C40DB7 /* Main.storyboard */,
-				B95DB5B121FE5B78001B2B83 /* SearchViewController.swift */,
-				B98CA4B921F7FBAA0083004E /* ExchangeViewController.swift */,
 				B98CA4B821F7F97A0083004E /* Model */,
 				B92E5EF121F4110000C40DB7 /* Assets.xcassets */,
 				B92E5EF321F4110000C40DB7 /* LaunchScreen.storyboard */,
 				B92E5EF621F4110000C40DB7 /* Info.plist */,
-				6029ADA321F5741700A6E5AF /* City.swift */,
-				60E2547621F68FBE00AD75D2 /* Currency.swift */,
 			);
 			path = "Buy?";
 			sourceTree = "<group>";
@@ -109,9 +183,25 @@
 			isa = PBXGroup;
 			children = (
 				B98CA4B521F7F9760083004E /* CurrencyCell.xib */,
+				6029ADA321F5741700A6E5AF /* City.swift */,
+				60E2547621F68FBE00AD75D2 /* Currency.swift */,
 				B98CA4B421F7F9760083004E /* CurrencyCell.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B9C9035F22222448001D45C2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B9BCC0382242C49600986949 /* MainTabBarController.swift */,
+				60867BC422260B820053C5B5 /* New Group */,
+				60867BBF2225F80E0053C5B5 /* TestCollectionView */,
+				60867BBA2225F01D0053C5B5 /* SaleTax */,
+				60867BB92225EFAE0053C5B5 /* CurrencyExchange */,
+				60867BBC2225F0500053C5B5 /* Tip */,
+				60867BBD2225F0650053C5B5 /* Setting */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +248,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = B92E5EDE21F410FE00C40DB7;
 			productRefGroup = B92E5EE821F410FE00C40DB7 /* Products */;
@@ -174,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				605C44AC22236568004B0728 /* Monaco.ttf in Resources */,
 				B98CA4B721F7F9760083004E /* CurrencyCell.xib in Resources */,
 				B92E5EF521F4110000C40DB7 /* LaunchScreen.storyboard in Resources */,
 				B92E5EF221F4110000C40DB7 /* Assets.xcassets in Resources */,
@@ -194,16 +286,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Buy?/Pods-Buy?-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -239,12 +337,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9BCC0372241690F00986949 /* ExchangeTableViewController.swift in Sources */,
+				B9B1B7C722400C4700A28462 /* TipsViewController.swift in Sources */,
 				B98CA4B621F7F9760083004E /* CurrencyCell.swift in Sources */,
 				B95DB5B221FE5B78001B2B83 /* SearchViewController.swift in Sources */,
-				B98CA4BA21F7FBAA0083004E /* ExchangeViewController.swift in Sources */,
 				B92E5EED21F410FE00C40DB7 /* ViewController.swift in Sources */,
+				60867BC12225F82C0053C5B5 /* TestViewController.swift in Sources */,
+				B9C903652222270E001D45C2 /* SettingViewController.swift in Sources */,
+				60867BC822260CD80053C5B5 /* LargeCollectionViewCell.swift in Sources */,
+				60867BC622260C6A0053C5B5 /* HomePageViewController.swift in Sources */,
 				60E2547721F68FBE00AD75D2 /* Currency.swift in Sources */,
+				B9BCC0392242C49600986949 /* MainTabBarController.swift in Sources */,
 				B92E5EEB21F410FE00C40DB7 /* AppDelegate.swift in Sources */,
+				60867BC32225F86A0053C5B5 /* TestCollectionViewCell.swift in Sources */,
 				6029ADA421F5741700A6E5AF /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +361,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B92E5EEF21F410FE00C40DB7 /* Base */,
+				B9635D2F2240A4A4002DA162 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -264,6 +370,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B92E5EF421F4110000C40DB7 /* Base */,
+				B9635D302240A4A4002DA162 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -275,6 +382,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -336,6 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -402,7 +511,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.churongzhang.Buy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -421,7 +530,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.churongzhang.Buy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

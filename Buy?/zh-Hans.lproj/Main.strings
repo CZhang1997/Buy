@@ -1,0 +1,102 @@
+
+/* Class = "UINavigationItem"; title = "Root View Controller"; ObjectID = "08J-dt-Lnb"; */
+"08J-dt-Lnb.title" = "Root View Controller";
+
+/* Class = "UIButton"; normalTitle = "选择城市"; ObjectID = "0Rc-Em-DbA"; */
+"0Rc-Em-DbA.normalTitle" = "选择城市";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8Hs-Hf-k54"; */
+"8Hs-Hf-k54.text" = "Label";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "8jH-a9-kdH"; */
+"8jH-a9-kdH.text" = "0";
+
+/* Class = "UITextField"; placeholder = "Amount"; ObjectID = "9iN-b6-IzW"; */
+"9iN-b6-IzW.placeholder" = "Amount";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "EMs-Cv-pqm"; */
+"EMs-Cv-pqm.title" = "Item";
+
+/* Class = "UILabel"; text = "Score: "; ObjectID = "F3a-fx-2sx"; */
+"F3a-fx-2sx.text" = "Score: ";
+
+/* Class = "UILabel"; text = "Tips %"; ObjectID = "Fyt-x7-8Je"; */
+"Fyt-x7-8Je.text" = "Tips %";
+
+/* Class = "UITabBarItem"; title = "算税"; ObjectID = "GTj-Ku-428"; */
+"GTj-Ku-428.title" = "算税";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "JhU-JU-ydF"; */
+"JhU-JU-ydF.text" = "0";
+
+/* Class = "UITabBarItem"; title = "全球汇算"; ObjectID = "LoE-Yy-UpT"; */
+"LoE-Yy-UpT.title" = "全球汇算";
+
+/* Class = "UITextField"; text = "您所在的州"; ObjectID = "MYY-Sf-bb7"; */
+"MYY-Sf-bb7.text" = "您所在的州";
+
+/* Class = "UITextField"; placeholder = "在此输入需换算金额"; ObjectID = "NWC-nj-faQ"; */
+"NWC-nj-faQ.placeholder" = "在此输入需换算金额";
+
+/* Class = "UITextField"; placeholder = "请选择货币种类"; ObjectID = "Pod-vL-9cE"; */
+"Pod-vL-9cE.placeholder" = "请选择货币种类";
+
+/* Class = "UILabel"; text = "¥"; ObjectID = "S5M-EW-4bJ"; */
+"S5M-EW-4bJ.text" = "¥";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "UnY-eG-cgp"; */
+"UnY-eG-cgp.text" = "1";
+
+/* Class = "UILabel"; text = "实时汇率"; ObjectID = "Ycp-F1-dMU"; */
+"Ycp-F1-dMU.text" = "实时汇率";
+
+/* Class = "UITextField"; text = "您所在的城市"; ObjectID = "aQS-1y-IHK"; */
+"aQS-1y-IHK.text" = "您所在的城市";
+
+/* Class = "UILabel"; text = "15 %"; ObjectID = "aTv-Cn-e2g"; */
+"aTv-Cn-e2g.text" = "15 %";
+
+/* Class = "UILabel"; text = "Split: "; ObjectID = "axt-Gj-ATJ"; */
+"axt-Gj-ATJ.text" = "Split: ";
+
+/* Class = "UILabel"; text = "Number of Guest "; ObjectID = "baC-nU-lfZ"; */
+"baC-nU-lfZ.text" = "Number of Guest ";
+
+/* Class = "UILabel"; text = "Food Quality"; ObjectID = "ct0-Vg-24j"; */
+"ct0-Vg-24j.text" = "Food Quality";
+
+/* Class = "UILabel"; text = "Score: "; ObjectID = "dpP-QF-wdw"; */
+"dpP-QF-wdw.text" = "Score: ";
+
+/* Class = "UILabel"; text = "Service Quality"; ObjectID = "hbt-AN-aL6"; */
+"hbt-AN-aL6.text" = "Service Quality";
+
+/* Class = "UILabel"; text = "Tips $"; ObjectID = "iam-0e-9Vl"; */
+"iam-0e-9Vl.text" = "Tips $";
+
+/* Class = "UILabel"; text = "50"; ObjectID = "kpm-5y-qg7"; */
+"kpm-5y-qg7.text" = "50";
+
+/* Class = "UILabel"; text = "Price: $"; ObjectID = "nTV-VP-1Lo"; */
+"nTV-VP-1Lo.text" = "Price: $";
+
+/* Class = "UILabel"; text = "Total: "; ObjectID = "nud-XD-FMD"; */
+"nud-XD-FMD.text" = "Total: ";
+
+/* Class = "UINavigationItem"; title = "汇率换算"; ObjectID = "pXE-9P-Z0y"; */
+"pXE-9P-Z0y.title" = "汇率换算";
+
+/* Class = "UILabel"; text = "在非实时汇率时，默认汇率为6.8"; ObjectID = "pdk-is-LAB"; */
+"pdk-is-LAB.text" = "在非实时汇率时，默认汇率为6.8";
+
+/* Class = "UITabBarItem"; title = "Exchange"; ObjectID = "v8c-PE-4rn"; */
+"v8c-PE-4rn.title" = "Exchange";
+
+/* Class = "UITextField"; placeholder = "Number"; ObjectID = "wja-Tx-bzs"; */
+"wja-Tx-bzs.placeholder" = "Number";
+
+/* Class = "UIButton"; normalTitle = "Get Suggestion"; ObjectID = "yU6-o2-fE3"; */
+"yU6-o2-fE3.normalTitle" = "Get Suggestion";
+
+/* Class = "UILabel"; text = "50"; ObjectID = "ysI-iQ-WQH"; */
+"ysI-iQ-WQH.text" = "50";

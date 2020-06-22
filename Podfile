@@ -8,5 +8,6 @@ target 'Buy?' do
     pod 'SwiftyJSON'
     pod 'Alamofire'
     pod 'SVProgressHUD'
-
+    pod 'SwipeCellKit'
+    pod 'RealmSwift'
 end

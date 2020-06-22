@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import SwipeCellKit
 
 
-class CurrencyCell: UITableViewCell {
+class CurrencyCell: SwipeTableViewCell {
     @IBOutlet weak var CurrencyName: UILabel!
     @IBOutlet weak var CurrencyCode: UILabel!
     @IBOutlet weak var CurrencyValue: UITextField!
@@ -17,7 +18,7 @@ class CurrencyCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+      
         // Initialization code
     }
 
